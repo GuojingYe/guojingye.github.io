@@ -79,17 +79,14 @@
 
 
 
-<meta name="description" content="redis 的值 可以是以下类型： 12345678910string: 值就是单独的一个值 最大能存储 512MB    eg.   set name ygjing   get namehash: 值本身也是键值对 &amp;quot;person&amp;quot;: &amp;#123;&amp;quot;name&amp;quot;: &amp;quot;ygjing&amp;quot;, &amp;quot;age&amp;quot;: &amp;quot;22&amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redis">
-<meta property="og:url" content="http://yoursite.com/2019/06/11/redis/index.html">
+<meta property="og:title" content="数据库集群">
+<meta property="og:url" content="http://yoursite.com/2019/06/26/数据库集群/index.html">
 <meta property="og:site_name" content="ygjing 学习笔记">
-<meta property="og:description" content="redis 的值 可以是以下类型： 12345678910string: 值就是单独的一个值 最大能存储 512MB    eg.   set name ygjing   get namehash: 值本身也是键值对 &amp;quot;person&amp;quot;: &amp;#123;&amp;quot;name&amp;quot;: &amp;quot;ygjing&amp;quot;, &amp;quot;age&amp;quot;: &amp;quot;22&amp;q">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-18T14:30:54.557Z">
+<meta property="og:updated_time" content="2019-06-26T10:36:27.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redis">
-<meta name="twitter:description" content="redis 的值 可以是以下类型： 12345678910string: 值就是单独的一个值 最大能存储 512MB    eg.   set name ygjing   get namehash: 值本身也是键值对 &amp;quot;person&amp;quot;: &amp;#123;&amp;quot;name&amp;quot;: &amp;quot;ygjing&amp;quot;, &amp;quot;age&amp;quot;: &amp;quot;22&amp;q">
+<meta name="twitter:title" content="数据库集群">
 
 
 
@@ -119,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/11/redis/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/26/数据库集群/">
 
 
 
 
 
-  <title>redis | ygjing 学习笔记</title>
+  <title>数据库集群 | ygjing 学习笔记</title>
   
 
 
@@ -232,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/11/redis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/26/数据库集群/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ygjing">
@@ -249,7 +246,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">redis</h1>
+          <h1 class="post-title" itemprop="name headline">数据库集群</h1>
         
 
         <div class="post-meta">
@@ -261,8 +258,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-11T17:09:09+08:00">
-                2019年06月11日
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T18:36:27+08:00">
+                2019年06月26日
               </time>
             
 
@@ -299,13 +296,7 @@
       
 
       
-        <p>redis 的值 可以是以下类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">string: 值就是单独的一个值 最大能存储 512MB</span><br><span class="line">    eg.   set name ygjing   get name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hash: 值本身也是键值对 &quot;person&quot;: &#123;&quot;name&quot;: &quot;ygjing&quot;, &quot;age&quot;: &quot;22&quot;&#125;</span><br><span class="line">    hash是一个string类型的 filed 和 value的映射表</span><br><span class="line"></span><br><span class="line">list: 列表是简单的字符串列表，按照插入的顺序排序</span><br><span class="line">set</span><br><span class="line">zset(sorted sets)</span><br></pre></td></tr></table></figure>
-
-<p>redis-cli 命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">select 1 选择id为1 的数据库</span><br><span class="line">keys * 获取所有key</span><br><span class="line">keys a* 获取所有以字母a开头的key</span><br><span class="line">type key 查看key类型</span><br><span class="line">ttl key 查看key的过期时间（秒）</span><br><span class="line">expire key 10 设置10秒后过期</span><br><span class="line">flushdb 删除当前库的所有key</span><br><span class="line">flushall 删除所有库的所有db的所有key</span><br><span class="line">-----------------------------------</span><br><span class="line">string</span><br><span class="line">    get key</span><br><span class="line">    set key value</span><br><span class="line">    del key</span><br><span class="line">    exists key 是否存在</span><br><span class="line">    incrby key 1 给对应key的value加一</span><br><span class="line">----------------------------------</span><br><span class="line">hash 哈希</span><br><span class="line">    hgetall key 显示hash里所有的键值对，奇数行是key偶数行是value</span><br><span class="line">    hget key filed 获取hash里面的特定filed的value</span><br><span class="line">    hset key filed value </span><br><span class="line">    hincrby key filed 1 给对应key的hash的对应filed的value加1</span><br><span class="line">--------------------------------------------</span><br><span class="line">list 列表</span><br><span class="line">    lpush key value 在列表头部插入数据</span><br><span class="line">    rpush key value 在列表尾部插入数据</span><br><span class="line"></span><br><span class="line">    lpop key 删除并返回表头数据</span><br><span class="line">    rpop key 删除并返回表尾数据</span><br><span class="line"></span><br><span class="line">    lrange key start stop 获取指定范围内的数据</span><br><span class="line">    lindex key index 获取指定位置的数据</span><br><span class="line">    llen key 返回列表长度</span><br><span class="line">----------------------------------------------------</span><br><span class="line">set 集合（无序不可重复列表）</span><br><span class="line">    sadd key value 添加值</span><br><span class="line">    sismember key value 判断value是否处在集合中 返回1 代表存在， 0 不存在</span><br><span class="line">    spop key 返回并移除一个 随机 的元素</span><br><span class="line">    smembers key 返回集合中所有元素</span><br><span class="line">    scard key 返回集合中元素的数量</span><br><span class="line">----------------------------------------------------</span><br><span class="line">zset 有序集合（与set的不同在与元素会关联一个 double 类型的分数）</span><br><span class="line">    zadd key score value 添加值 eg.   zadd teacher 1 ygjing</span><br><span class="line">    zscore key member 返回集合中member 成员的分数 zscore teacher ygjing // &quot;1&quot; 返回的分数为字符串类型</span><br><span class="line">    zincrby key increment member 给指定成员的分数加上 increment 数量</span><br><span class="line"></span><br><span class="line">    zcard key 返回集合的元素数量</span><br><span class="line">    zcount key min max 返回集合中分数在min和max之间的元素数量</span><br><span class="line"></span><br><span class="line">    zrange key start stop 返回指定位置的集合元素，元素按 score 从小到大排序</span><br><span class="line">    zrevrange key start stop 返回指定位置的集合元素，元素按 score 从大到小排序</span><br><span class="line"></span><br><span class="line">    zrank key member 返回指定元素在集合中的排名（从小到大）</span><br><span class="line">    zrevrank key member 返回指定元素在集合中的排名（从大到小）</span><br><span class="line"></span><br><span class="line">    zrem key member 删除指定的元素</span><br></pre></td></tr></table></figure>
-
-
+        
       
     </div>
     
@@ -329,8 +320,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/10/buffer/" rel="next" title="buffer">
-                <i class="fa fa-chevron-left"></i> buffer
+              <a href="/2019/06/26/node多进程/" rel="next" title="node多进程">
+                <i class="fa fa-chevron-left"></i> node多进程
               </a>
             
           </div>
@@ -339,8 +330,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/19/mongodb/" rel="prev" title="mongodb">
-                mongodb <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/26/主从/" rel="prev" title="主从">
+                主从 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
